@@ -1,13 +1,19 @@
-import tvLogo from "/tv.svg";
+import Navbar from "./components/Navbar";
+import MobileNav from "./components/MobileNav";
+import { Route, Routes } from "react-router";
 
 function App() {
   return (
     <>
-      <div className="min-h-screen w-full">
-        <div className="px-3 flex items-center gap-1 bg-secondary py-2">
-          <img src={tvLogo} className="w-10" />
-          <h1 className="text-2xl pt-3">Watchtime</h1>
+      <div className="flex flex-col h-screen w-full">
+        <Navbar />
+        <div className="grow">
+          <Routes>
+            <Route path="/" element={<h1>Home</h1>} />
+            <Route path="/about" element={<h1>About</h1>} />
+          </Routes>
         </div>
+        <MobileNav />
       </div>
     </>
   );
